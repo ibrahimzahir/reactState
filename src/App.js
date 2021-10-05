@@ -3,16 +3,21 @@ import "./App.css";
 import React, { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  function documentCount() {
+  const [count, setCount] = useState(4);
+
+  function decrementCount() {
     setCount((prevCount) => prevCount - 1);
+  }
+
+  function incrementCount() {
+    setCount((prevCount) => prevCount + 1);
   }
 
   return (
     <div>
-      <button>-</button>
-      <p>You clicked 0 times</p>
-      <button>+</button>
+      <button onClick={decrementCount}>-</button>
+      <p>You clicked {count} times</p>
+      <button onClick={incrementCount}>+</button>
     </div>
   );
 }
